@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const minutesDisplay = document.getElementById('minutes');
   const secondsDisplay = document.getElementById('seconds');
   const startButton = document.getElementById('start');
-  const pauseButton = document.getElementById('pause');
   const resetButton = document.getElementById('reset');
   const progressBar = document.getElementById('progress');
 
@@ -52,13 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  function pauseTimer() {
-    if (isRunning) {
-      clearInterval(timerId);
-      isRunning = false;
-    }
-  }
-
   function resetTimer() {
     clearInterval(timerId);
     isRunning = false;
@@ -69,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Event listeners
   startButton.addEventListener('click', startTimer);
-  pauseButton.addEventListener('click', pauseTimer);
   resetButton.addEventListener('click', resetTimer);
 
   // Initialize display
