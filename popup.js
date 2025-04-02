@@ -34,13 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
         timeLeft--;
         updateDisplay();
         
-        if (timeLeft === 0) {
-          clearInterval(timerId);
-          isRunning = false;
+        if (timeLeft <= 0) {
           // Switch between work and break
           isWorkTime = !isWorkTime;
           timeLeft = isWorkTime ? 10 : 5;
-          updateDisplay();
           // Notify the background script that the timer is complete
           chrome.runtime.sendMessage({ 
             type: 'TIMER_COMPLETE',
